@@ -4,5 +4,10 @@ title = 'Oderberg/Mark'
 
 assetdir = 'static'
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  person = "personen"
+
 [markup.goldmark.renderer]
   unsafe = true
