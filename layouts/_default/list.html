@@ -1,0 +1,17 @@
+<p>Listpage</p>
+
+<ul>
+    {{ range .Site.RegularPages.ByTitle }}
+       <h2>{{.Title}}</h2>
+       <br>
+       {{ if (resources.GetMatch .Params.featured_image) }}
+            <img src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
+        {{ end }}
+        <br>
+        {{ .Content }}
+        <h4>{{.Params.tags}}</h4>
+        <br>
+
+    {{ end }}
+</ul>
+    

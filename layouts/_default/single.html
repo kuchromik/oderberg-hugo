@@ -2,7 +2,9 @@
 
     {{ with .Params.title }}<h1>{{ . }}</h1>{{ end }}
     <br>
-    {{ with .Params.featured_image }}<img src="{{ . }}">{{ end }}
+    {{ if (resources.GetMatch .Params.featured_image) }}
+        <img src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
+    {{ end }}
 
     {{ .Content }}
 

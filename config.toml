@@ -2,5 +2,7 @@ baseURL = 'http://oderberg-mark.de/'
 languageCode = 'de-de'
 title = 'Oderberg/Mark'
 
+assetdir = 'static'
+
 [markup.goldmark.renderer]
   unsafe = true
