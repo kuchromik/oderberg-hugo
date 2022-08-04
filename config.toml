@@ -1,3 +1,6 @@
 baseURL = 'http://oderberg-mark.de/'
 languageCode = 'de-de'
 title = 'Oderberg/Mark'
+
+[markup.goldmark.renderer]
+  unsafe = true
