@@ -1,7 +1,10 @@
 <nav>
     <ul>
-        <li>Marktplatz</li>
-        <li>Berliner Straße</li>
-        <li>Angermünder Straße</li>
-    </ul>
+        {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{ .URL }}">
+            <span>{{ .Name }}</span></a>
+        </li>
+    {{ end }}
+      </ul>
 </nav>
