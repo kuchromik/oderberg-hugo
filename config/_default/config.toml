@@ -11,3 +11,5 @@ assetdir = 'static'
 
 [markup.goldmark.renderer]
   unsafe = true
+
+enableGitInfo = true

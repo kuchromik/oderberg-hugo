@@ -8,6 +8,15 @@
 
     {{ .Content }}
 
+    {{ if $.GitInfo }}      <!-- To enable this, put "enableGitInfo = true" in your site config.toml -->
+        <p>
+            {{ printf "GitInfo debug:: %#v" $.GitInfo }}
+        </p>
+        <p>
+            LastMod Date using GitInfo: {{ .GitInfo.AuthorDate }}
+        </p>
+    {{ end }}
+
     <p>layout/default/single.html</p>
 
 
