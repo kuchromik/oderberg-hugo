@@ -8,16 +8,21 @@
 
     {{ .Content }}
 
-    {{ if $.GitInfo }}      <!-- To enable this, put "enableGitInfo = true" in your site config.toml -->
-        <p>
-            {{ printf "GitInfo debug:: %#v" $.GitInfo }}
-        </p>
-        <p>
-            LastMod Date using GitInfo: {{ .GitInfo.AuthorDate }}
-        </p>
+    {{ $date := now }}
+    {{ $author := "Horst Kippowski"}}
+    {{ if .GitInfo }}
+        {{ $date = .GitInfo.AuthorDate }}
+        {{ $author = .GitInfo.AuthorName }}
     {{ end }}
-
+    <div>
+     zuletzt geändert am {{- $date.Format "January 02, 2006" -}} von {{ $author }}
+    </div>
+   
     <p>layout/default/single.html</p>
 
+    <br>
+
+    {{ $update := .Page.Date }}
+    <small class="text-muted">Letzte Aktualisierung {{ $update.Format "02.01.2006" }}</small>
 
     {{ end }}
