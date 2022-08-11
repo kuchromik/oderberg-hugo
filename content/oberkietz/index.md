@@ -8,3 +8,7 @@ menu:
     weight: 20
 
 ---
+
+{{< img src="2-53-05.jpg" alt="Oberkietz 1" >}}
+
+{{< img src="2-55-05.jpg" alt="Oberkietz 2" >}}
