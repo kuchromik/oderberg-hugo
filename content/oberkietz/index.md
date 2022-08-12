@@ -11,3 +11,5 @@ menu:
 
 
 {{< img src="2-55-05.jpg" alt="Oberkietz 2" >}}
+
+![text](2-55-05.jpg){ style="width=60%" }
