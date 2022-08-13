@@ -13,3 +13,9 @@ assetdir = 'static'
   unsafe = true
 
 enableGitInfo = true
+
+[menu]
+  [[menu.main]]
+  name = 'Kategorien und Stichwörter'
+  url = '/tags'
+  weight = 100
