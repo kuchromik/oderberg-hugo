@@ -8,17 +8,12 @@
 
     {{ .Content }}
 
-    {{ $date := now }}
-    {{ $author := "Horst Kippowski"}}
-    {{- if .GitInfo -}}
-        {{ $date = .GitInfo.AuthorDate }}
-        {{ $author = .GitInfo.AuthorName }}
-    {{- end -}}
-    <div>
-     zuletzt geändert am {{- $date.Format "January 02, 2006" -}} von {{ $author }}
-    </div>
-   
-    <p>layout/default/single.html</p>
+    <ul id="tags">
+        {{ range .Params.tags }}
+          <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        {{ end }}
+      </ul>
+      
 
     <br>
 
