@@ -1,6 +1,7 @@
 {{ define "main" }}
-  <div class="container">
-    <h1>All posts for {{ .Type | singularize }} "{{ .Title }}"</h1>
+  <div>
+    <h1>Mit Vorlage term.html</h1>
+    <h3>All posts for {{ .Type | singularize }} "{{ .Title }}"</h3>
     <ul>
       {{ range .Data.Pages }}
         <li>
