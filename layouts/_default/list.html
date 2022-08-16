@@ -1,8 +1,9 @@
-<p>Listpage-{{.Page.Params.title}}</p>
+{{ define "main" }}
+<h1>{{.Page.Params.title}}</h1>
 
 {{range where $.Site.RegularPages.ByWeight "Section" .Page.Params.title }}
-        <p>{{ .Params.categories }}</p>
-        <p>{{ .Params.weight }}</p>
+        <!--<p>{{ .Params.categories }}</p>
+        <p>{{ .Params.weight }}</p> -->
         <br>
         {{ if (resources.GetMatch .Params.featured_image) }}
             <img src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
@@ -11,24 +12,22 @@
         {{ .Content }}
           <br>
           <ul id="tags">
-            <h3>Einschlägige Tags</h3>
             {{ range .Params.tags }}
               <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
             {{ end }}
-          </ul>
-            <br>          
+          </ul> 
+          <!--      
           <ul>
             <h3>Alle Tags</h3>
             {{ range .Site.Taxonomies.tags }}
                     <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
             {{ end }}
-        </ul>
-          
-        <br>
+          </ul>
+        -->
 {{ end }}
 
 
-
+<!--
 <section>
     <ul>
       {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
@@ -47,5 +46,10 @@
       {{ end }}
     </ul>
   </section>
-  
+-->
+
+{{ $update := .Page.Date }}
+    <small class="text-muted">Letzte Aktualisierung {{ $update.Format "02.01.2006" }}</small>
+    
+  {{ end }}
 
