@@ -16,6 +16,6 @@ enableGitInfo = true
 
 [menu]
   [[menu.main]]
-  name = 'Kategorien und Stichwörter'
+  name = 'Stichwörter'
   url = '/tags'
   weight = 100
