@@ -1,55 +1,27 @@
 {{ define "main" }}
-<h1>{{.Page.Params.title}}</h1>
+<div class="container">
+<h1 class="titles">{{.Page.Params.title}}</h1>
 
 {{range where $.Site.RegularPages.ByWeight "Section" .Page.Params.title }}
-        <!--<p>{{ .Params.categories }}</p>
-        <p>{{ .Params.weight }}</p> -->
         <br>
         {{ if (resources.GetMatch .Params.featured_image) }}
             <img src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
         {{ end }}
         <br>
+        <br>
         {{ .Content }}
           <br>
-          <ul id="tags">
+          <ul class="tags">
             {{ range .Params.tags }}
               <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
             {{ end }}
           </ul> 
-          <!--      
-          <ul>
-            <h3>Alle Tags</h3>
-            {{ range .Site.Taxonomies.tags }}
-                    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
-            {{ end }}
-          </ul>
-        -->
+          <br>
 {{ end }}
-
-
-<!--
-<section>
-    <ul>
-      {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-        <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
-          <ul>
-            {{ range $key, $value := $taxonomy }}
-            <li> {{ $key }} </li>
-                  <ul>
-                  {{ range $value.Pages }}
-                      <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
-                  {{ end }}
-                  </ul>
-            {{ end }}
-          </ul>
-        </li>
-      {{ end }}
-    </ul>
-  </section>
--->
 
 {{ $update := .Page.Date }}
     <small class="text-muted">Letzte Aktualisierung {{ $update.Format "02.01.2006" }}</small>
     
-  {{ end }}
+</div>
+{{ end }}
 
