@@ -1,21 +1,10 @@
-baseURL = 'http://oderberg-mark.de/'
+baseURL = 'https://www.kleintierpraxis-dr-moebius.de/'
 languageCode = 'de-de'
-title = 'Oderberg/Mark'
+title = 'Kleintierpraxis Dr. Heike Möbius'
 
 assetdir = 'static'
-
-[taxonomies]
-  tag = "tags"
-  category = "categories"
-  person = "personen"
 
 [markup.goldmark.renderer]
   unsafe = true
 
 enableGitInfo = true
-
-[menu]
-  [[menu.main]]
-  name = 'Stichwörter'
-  url = '/tags'
-  weight = 100

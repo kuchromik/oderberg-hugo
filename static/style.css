@@ -96,6 +96,10 @@ h5 {
 
 /* nav */
 
+nav {
+  background-color: #ccc;
+}
+
 
 .navbar-brand {
   display:flex;
