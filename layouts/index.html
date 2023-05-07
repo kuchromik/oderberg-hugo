@@ -1,11 +1,14 @@
 {{ define "main" }}
 <div class="container">
-    {{ with .Params.title }}<h1>{{ . }}</h1>{{ end }}
+    {{ with .Params.title }}<h1 class="titles">{{ . }}</h1>{{ end }}
     <br>
-    {{ with .Params.featured_image }}<img src="{{ . }}">{{ end }}
+    {{ with .Params.featured_image }}<img class="imagelagom" src="{{ . }}">{{ end }}
     <br>
     <br>
     {{ .Content }}
     <br>
+    <p>Wählen Sie mit dem Hamburger-Button oben rechts ein Thema aus! </p>
+    <br>
+
 </div>
 {{ end }}

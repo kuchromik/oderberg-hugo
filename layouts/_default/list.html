@@ -1,11 +1,13 @@
 {{ define "main" }}
 <div class="container">
-<h1 class="titles">{{.Page.Params.title}}</h1>
+<h1 class="titles">{{ upper (humanize .Page.Params.title) }}</h1>
 
 {{range where $.Site.RegularPages.ByWeight "Section" .Page.Params.title }}
         <br>
         {{ if (resources.GetMatch .Params.featured_image) }}
-            <img src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
+          <a title="Mehr Informationen zu diesem Bild" href="{{ .Page.Permalink }}">
+            <img class="imagelagom" src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
+          </a>
         {{ end }}
         <br>
         <br>

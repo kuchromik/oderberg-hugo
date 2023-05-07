@@ -1,23 +1,28 @@
 {{ define "main" }}
 <div class="container">
-    {{ with .Params.title }}<h1>{{ . }}</h1>{{ end }}
+    {{ with .Page.Params.categories }}<h1 class="titles">{{ upper (humanize . ) }}</h1>{{ end }}
     <br>
     {{ if (resources.GetMatch .Params.featured_image) }}
-        <img src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
+        <img class="imagelagom" src="{{ (resources.GetMatch .Params.featured_image).RelPermalink }}" />
     {{ end }}
     <br>
     <br>
     {{ .Content }}
     <br>
-    <ul id="tags">
+    <ul class="tags">
         {{ range .Params.tags }}
           <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
         {{ end }}
         <br>
       </ul>
-      
+      <br>
+    
+      <i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i>
 
-    <br>
+      <a href="/{{ lower .Page.Params.categories }}">Zurück nach {{ upper (humanize .Page.Params.categories) }}</a>
+      
+      <br>
+      <br>
 
     {{ $update := .Page.Date }}
     <small class="text-muted">Letzte Aktualisierung {{ $update.Format "02.01.2006" }}</small>
